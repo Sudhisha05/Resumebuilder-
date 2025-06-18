@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Templates - Resume It</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styling for preview area - adjust as needed */
+        #template-preview {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #template-preview img {
+            max-width: 500px;
+            max-height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Resume Templates</h1>
+            <p class="tagline">Choose the perfect template to land your dream job.</p>
+            <nav>
+                <a href="home.html" class="back-home">Back to Home</a>
+            </nav>            
+        </header>
+
+        <main class="templates-grid">
+            <div class="template-card">
+                <img src="template1.webp" alt="Modern Template" class="template-image">
+                <h3>Modern Template</h3>
+                <p>A clean and contemporary design perfect for various industries.</p>
+                <a href="#" class="use-template-btn" data-template="template1.webp" data-template-name="Modern Template">Use This Template</a>
+            </div>
+
+            <div class="template-card">
+                <img src="template2.jpg" alt="Professional Template" class="template-image">
+                <h3>Professional Template</h3>
+                <p>A formal and structured layout ideal for corporate roles.</p>
+                <a href="#" class="use-template-btn" data-template="template2.jpg" data-template-name="Professional Template">Use This Template</a>
+            </div>
+
+            <div class="template-card">
+                <img src="template3.webp" alt="Creative Template" class="template-image">
+                <h3>Creative Template</h3>
+                <p>A visually engaging design suitable for creative fields.</p>
+                <a href="#" class="use-template-btn" data-template="template3.webp" data-template-name="Creative Template">Use This Template</a>
+            </div>
+
+            <div class="template-card">
+                <img src="temp4.jpg" alt="Executive Template" class="template-image">
+                <h3>Executive Template</h3>
+                <p>A sophisticated and polished design for senior-level positions.</p>
+                <a href="#" class="use-template-btn" data-template="template41.jpg.crdownload" data-template-name="Executive Template">Use This Template</a>
+            </div>
+
+            <div class="template-card">
+                <img src="template5.jpg" alt="Technical Template" class="template-image">
+                <h3>Technical Template</h3>
+                <p>A focused and organized design suitable for technical roles, highlighting skills and projects.</p>
+                <a href="#" class="use-template-btn" data-template="template5.jpg" data-template-name="Technical Template">Use This Template</a>
+            </div>
+
+            <div class="template-card">
+                <img src="template6.png" alt="Minimalist Template" class="template-image">
+                <h3>Minimalist Template</h3>
+                <p>A simple and elegant design that emphasizes clarity and conciseness.</p>
+                <a href="#" class="use-template-btn" data-template="template6.png" data-template-name="Minimalist Template">Use This Template</a>
+            </div>
+
+            <div class="template-card">
+                <img src="template7.png" alt="Academic Template" class="template-image">
+                <h3>Academic Template</h3>
+                <p>A template well-suited for academics, researchers, and educators.</p>
+                <a href="#" class="use-template-btn" data-template="template7.png" data-template-name="Academic Template">Use This Template</a>
+            </div>
+
+            <div class="template-card">
+                <img src="template8.png" alt="Skills-Based Template" class="template-image">
+                <h3>Skills-Based Template</h3>
+                <p>A design that highlights key skills and competencies, ideal for career changers or those with gaps in work history.</p>
+                <a href="#" class="use-template-btn" data-template="template8.png" data-template-name="Skills-Based Template">Use This Template</a>
+            </div>
+
+            <div class="template-card">
+                <img src="template9.png" alt="Infographic Template" class="template-image">
+                <h3>Infographic Template</h3>
+                <p>A visually appealing and data-driven design that uses charts and graphs to showcase achievements.</p>
+                <a href="#" class="use-template-btn" data-template="template9.png" data-template-name="Infographic Template">Use This Template</a>
+            </div>
+
+            <div class="template-card">
+                <img src="template10.png" alt="Combination Template" class="template-image">
+                <h3>Combination Template</h3>
+                <p>A balanced combination of chronological and functional styles.</p>
+                <a href="#" class="use-template-btn" data-template="template10.png" data-template-name="Combination Template">Use This Template</a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const templateButtons = document.querySelectorAll('.use-template-btn');
+            const previewImage = document.getElementById('preview-image');
+            const templateNameDisplay = document.getElementById('template-name-display');
+            const useSelectedTemplateLink = document.getElementById('use-selected-template');
+            let selectedTemplate = null;
+
+
+            templateButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    const templateImage = this.getAttribute('data-template');
+                    const templateName = this.getAttribute('data-template-name');
+
+                    previewImage.src = templateImage;
+                    previewImage.alt = templateName;
+                    templateNameDisplay.textContent = templateName;
+
+                    selectedTemplate = templateImage.split('.')[0]; // Remove extension, get template name
+
+                    // Show the "Use This Template" link with the correct URL
+                    useSelectedTemplateLink.href = 'index.html?template=' + selectedTemplate;
+                    useSelectedTemplateLink.style.display = 'inline';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

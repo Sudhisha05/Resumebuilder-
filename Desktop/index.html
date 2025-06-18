@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume It - Build Your Perfect Resume</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #080909;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      display: flex;
+      flex: 1;
+      padding: 40px;
+      gap: 40px;
+    }
+
+    form, .resume-preview {
+      flex: 1;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .buttons {
+      margin-top: 10px;
+      color: #080909;
+      
+    }
+
+    button {
+      background-color: #2c3e50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1a242f;
+    }
+
+    .resume-preview h3, .resume-preview h4 {
+      margin: 10px 0 5px;
+    }
+
+    footer {
+      background-color: #0d0e0f;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Resume It</h1>
+    <nav>
+      <ul>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="tips.html">Tips</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form id="resume-form">
+      <h2>Resume Information</h2>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your Name" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="your.email@example.com" />
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" placeholder="(123) 456-7890" />
+
+      <label for="linkedin">LinkedIn</label>
+      <input type="text" id="linkedin" placeholder="Your LinkedIn Profile" />
+
+      <label for="skills">Skills</label>
+      <textarea id="skills" placeholder="Your Skills"></textarea>
+
+      <label for="experience">Experience</label>
+      <textarea id="experience" placeholder="Your Experience"></textarea>
+
+      <label for="internships">Internships</label>
+      <textarea id="internships" placeholder="Your Internships"></textarea>
+
+      <label for="education">Education</label>
+      <textarea id="education" placeholder="Your Education"></textarea>
+
+      <div class="buttons">
+        <button type="button" id="download-pdf">Download as PDF</button>
+      </div>
+    </form>
+
+    <div class="resume-preview">
+      <h2>Resume Preview</h2>
+      <h3 id="preview-name">Your Name</h3>
+      <p id="preview-email">Email: your.email@example.com</p>
+      <p id="preview-phone">Phone: (123) 456-7890</p>
+      <p id="preview-linkedin">LinkedIn: </p>
+
+      <h4>Skills</h4>
+      <p id="preview-skills"></p>
+
+      <h4>Experience</h4>
+      <p id="preview-experience"></p>
+
+      <h4>Internships</h4>
+      <p id="preview-internships"></p>
+
+      <h4>Education</h4>
+      <p id="preview-education"></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Resume It. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const fields = [
+      'name',
+      'email',
+      'phone',
+      'linkedin',
+      'skills',
+      'experience',
+      'internships',
+      'education'
+    ];
+
+    fields.forEach(field => {
+      const input = document.getElementById(field);
+      const preview = document.getElementById(`preview-${field}`);
+      
+      input.addEventListener('input', () => {
+        if (field === 'email' || field === 'phone' || field === 'linkedin') {
+          preview.textContent = `${field.charAt(0).toUpperCase() + field.slice(1)}: ${input.value}`;
+        } else if (field === 'name') {
+          preview.textContent = input.value || 'Your Name';
+        } else {
+          preview.textContent = input.value;
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>

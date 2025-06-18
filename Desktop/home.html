@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume It - Build Your Perfect Resume</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            :root {
+                --background: 0 0% 100%;
+                --foreground: 240 10% 3.9%;
+                --primary: 240 5.9% 10%;
+                --primary-foreground: 0 0% 98%;
+                --secondary: 240 4.8% 95.9%;
+                --secondary-foreground: 240 5.9% 10%;
+                --accent: 264 70% 51%; /* Added accent color */
+            }
+
+            .dark {
+                --background: 240 10% 3.9%;
+                --foreground: 0 0% 98%;
+                --primary: 0 0% 98%;
+                --primary-foreground: 240 5.9% 10%;
+                --secondary: 240 3.7% 15.9%;
+                --secondary-foreground: 0 0% 98%;
+                --accent: 264 80% 41%; /* Dark mode accent */
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+            }
+        }
+
+        @layer utilities {
+            .glass {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground min-h-screen flex flex-col">
+    <header class="w-full py-4 bg-primary text-primary-foreground shadow-md flex items-center justify-between px-6">
+        <a href="/" class="text-xl font-bold hover:text-accent transition-colors">Resume It</a>
+        <nav>
+            <ul class="flex items-center space-x-4">
+                <li><a href="templates.html" target="_top"hover:text-accent transition-colors">Templates</a></li>
+                <li><a href="tips.html"target="_top"hover:text-accent transition-colors">Tips</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-1 container mx-auto px-6 py-12">
+        <section class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Create a Resume That Gets You Hired</h1>
+            <p class="text-lg text-black-600 dark:text-black-400 mb-8">Use our professional templates and tools to craft the perfect resume.</p>
+            <a href="index.html"
+                class="inline-block bg-accent text-primary-foreground px-8 py-4 text-lg rounded-lg hover:bg-accent/80 transition-colors shadow-md">Build It Now</a>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-semibold mb-6">Popular Resume Examples</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-4">Software Engineer</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Tailored resumes for software engineering roles</p>
+                    <a href="softeng.html"><img src="softdev.jpg" alt="Software Engineer"
+                            class="rounded-lg shadow-lg w-full"></a>
+                </div>
+                <div class="glass p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-4">Graphic Designer</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Showcase your creativity in design</p>
+                    <a href="graphic-designer.html"><img src="graphdesi.jpeg" alt="Graphic Designer"
+                            class="rounded-lg shadow-lg w-full"></a>
+                </div>
+                <div class="glass p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-4">Marketing Manager</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Highlight your strategic marketing skills</p>
+                    <a href="marketing-manager.html"><img src="marman.webp" alt="Marketing Manager"
+                            class="rounded-lg shadow-lg w-full"></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-16 py-12 bg-secondary rounded-lg text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Build Your Dream Resume?</h2>
+            <p class="text-lg text-gray-700 dark:text-black-300 mb-8">Get started today and take the next step in your career.</p>
+            <a href="index.html"
+                class="inline-block bg-accent text-primary-foreground px-8 py-4 text-lg rounded-lg hover:bg-accent/80 transition-colors shadow-md">Get Started</a>
+        </section>
+
+    </main>
+
+    <footer class="w-full py-4 bg-primary text-primary-foreground text-center mt-auto">
+        <p>© 2025 Resume Builder. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

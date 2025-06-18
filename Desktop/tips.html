@@ -1,0 +1,217 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tips for Freshers - Resume It</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #e0ecf7);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: #0d0d0d;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    header .logo {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #0d0d0d;
+    }
+
+    .card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 0.7s ease forwards;
+      opacity: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    .success-story {
+      border-left: 5px solid #0a0a0a;
+      background-color: #f5faff;
+      animation: fadeInUp 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    .success-story h3 {
+      margin-top: 0;
+      color: #0d0d0d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #101011;
+      color: white;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Resume It</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Resume</a></li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="tips.html">Tips</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>📄 Professional Resume Tips</h2>
+      <ul>
+        <li>Keep it concise – one page is ideal for freshers.</li>
+        <li>Choose a modern and readable template.</li>
+        <li>Highlight education, certifications, and relevant projects.</li>
+        <li>Add internships and volunteering experiences.</li>
+        <li>Customize for each job role with specific keywords.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>💼 Interview Preparation</h2>
+      <ul>
+        <li>Learn about the company’s values and recent work.</li>
+        <li>Practice STAR-based answers to behavioral questions.</li>
+        <li>Have 2-3 questions ready for the interviewer.</li>
+        <li>Dress neat and professional — make a great first impression!</li>
+        <li>Always follow up with a brief thank-you message.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>🚀 Internship & Entry-Level Job Tips</h2>
+      <ul>
+        <li>Polish your LinkedIn and GitHub (if you're technical).</li>
+        <li>Reach out to seniors and alumni on LinkedIn.</li>
+        <li>Attend webinars, hackathons, and college career fairs.</li>
+        <li>Don't hesitate to apply for internships at startups.</li>
+        <li>Document your learning — blogs or portfolios work wonders!</li>
+      </ul>
+    </section>
+
+    <section class="card success-story">
+      <h2>🌟 Fresher Success Story</h2>
+      <h3>Meet Neha, Now a Junior Developer at Infosys</h3>
+      <p>
+        Neha was a 2024 Computer Science graduate. With no formal job experience, she used our <strong>Modern Resume Template</strong>
+        to highlight her GitHub projects, online certifications in Python & Web Development, and her capstone project on AI Chatbots.
+      </p>
+      <p>
+        Within two months, she cracked multiple interviews and accepted an offer from <strong>Infosys</strong>. Her secret? A clean resume,
+        focused prep, and relentless practice.
+      </p>
+      <ul>
+        <li>Academic Project: AI Virtual Assistant (React + Python)</li>
+        <li>Certification: Google Data Analytics | Coursera</li>
+        <li>Portfolio: <a href="#">github.com/neha-dev</a></li>
+      </ul>
+      <p><em>Inspired? You can do it too!</em></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Resume It. Crafted with 💙 to help freshers succeed.</p>
+  </footer>
+
+</body>
+
+</html>

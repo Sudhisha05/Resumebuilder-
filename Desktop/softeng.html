@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Software Engineer Resume</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="w-full py-4 bg-gray-900 text-white shadow-md flex items-center justify-between px-6">
+    <a href="/" class="text-xl font-bold hover:text-indigo-400 transition-colors">Resume It</a>
+    <nav>
+      <ul class="flex items-center space-x-4">
+        <li><a href="templates.html" class="hover:text-indigo-400 transition-colors">Templates</a></li>
+        <li><a href="tips.html" class="hover:text-indigo-400 transition-colors">Tips</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 container mx-auto px-6 py-8">
+    <h1 class="text-3xl font-bold mb-6 text-center">Software Engineer Resume </h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- LEFT: User Inputs -->
+      <div class="bg-white p-6 rounded-xl shadow-md overflow-y-auto max-h-[90vh]">
+        <h2 class="text-xl font-semibold mb-4">Enter Your Details</h2>
+        <form id="resumeForm" class="space-y-4">
+          <div>
+            <label class="block font-medium">Full Name</label>
+            <input type="text" id="fullName" class="w-full border rounded px-4 py-2" value="Person Name">
+          </div>
+          <div>
+            <label class="block font-medium">Email</label>
+            <input type="email" id="email" class="w-full border rounded px-4 py-2" value="Personname@example.com">
+          </div>
+          <div>
+            <label class="block font-medium">Skills</label>
+            <textarea id="skills" rows="2" class="w-full border rounded px-4 py-2">JavaScript, React, Node.js, Docker</textarea>
+          </div>
+          <div>
+            <label class="block font-medium">Internships</label>
+            <textarea id="internships" rows="3" class="w-full border rounded px-4 py-2">Software Engineering Intern at TechCorp (Summer 2023)</textarea>
+          </div>
+          <div>
+            <label class="block font-medium">Experience</label>
+            <textarea id="experience" rows="3" class="w-full border rounded px-4 py-2">2 years at DevWorks building scalable web apps</textarea>
+          </div>
+          <div>
+            <label class="block font-medium">Education</label>
+            <textarea id="education" rows="3" class="w-full border rounded px-4 py-2">B.Tech in Computer Science, XYZ University (2020 - 2024)</textarea>
+          </div>
+          <div>
+            <label class="block font-medium">Certifications</label>
+            <textarea id="certifications" rows="2" class="w-full border rounded px-4 py-2">AWS Certified Developer, Google Cloud Fundamentals</textarea>
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: Resume Preview -->
+      <div class="bg-white p-6 rounded-xl shadow-md overflow-y-auto max-h-[90vh]">
+        <h2 class="text-xl font-semibold mb-4">Resume Preview</h2>
+        <div id="resumePreview" class="space-y-4 text-gray-800">
+          <h1 class="text-2xl font-bold" id="previewName">Person Name</h1>
+          <p id="previewEmail" class="text-sm text-gray-600">Personname@example.com</p>
+          <hr>
+
+          <div>
+            <h3 class="font-semibold">Skills</h3>
+            <p id="previewSkills">JavaScript, React, Node.js, Docker</p>
+          </div>
+          <div>
+            <h3 class="font-semibold">Internships</h3>
+            <p id="previewInternships">Software Engineering Intern at TechCorp (Summer 2023)</p>
+          </div>
+          <div>
+            <h3 class="font-semibold">Experience</h3>
+            <p id="previewExperience">2 years at DevWorks building scalable web apps</p>
+          </div>
+          <div>
+            <h3 class="font-semibold">Education</h3>
+            <p id="previewEducation">B.Tech in Computer Science, XYZ University (2020 - 2024)</p>
+          </div>
+          <div>
+            <h3 class="font-semibold">Certifications</h3>
+            <p id="previewCertifications">AWS Certified Developer, Google Cloud Fundamentals</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script for Real-Time Preview -->
+  <script>
+    const fields = [
+      { id: "fullName", preview: "previewName", default: "Person Name" },
+      { id: "email", preview: "previewEmail", default: "Personname@example.com" },
+      { id: "skills", preview: "previewSkills", default: "JavaScript, React, Node.js, Docker" },
+      { id: "internships", preview: "previewInternships", default: "Software Engineering Intern at TechCorp (Summer 2023)" },
+      { id: "experience", preview: "previewExperience", default: "2 years at DevWorks building scalable web apps" },
+      { id: "education", preview: "previewEducation", default: "B.Tech in Computer Science, XYZ University (2020 - 2024)" },
+      { id: "certifications", preview: "previewCertifications", default: "AWS Certified Developer, Google Cloud Fundamentals" }
+    ];
+
+    fields.forEach(({ id, preview, default: def }) => {
+      const input = document.getElementById(id);
+      const output = document.getElementById(preview);
+      input.addEventListener('input', () => {
+        output.textContent = input.value || def;
+      });
+    });
+  </script>
+</body>
+</html>
